@@ -1,0 +1,100 @@
+{
+  "帮助类启动命令": [
+    { "title": "启动docker", "content": "systemctl start docke" },
+    { "title": "停止docker", "content": "systemctl stop docke" },
+    { "title": "重启docker", "content": "systemctl restart docke" },
+    { "title": "查看docker状态", "content": "systemctl status docke" },
+    { "title": "开机启动", "content": "systemctl enable docke" },
+    { "title": "查看docker概要信息", "content": "docker info" },
+    { "title": "查看docker总体帮助文档", "content": "docker --help" },
+    { "title": "查看docker命令帮助文档", "content": "docker 具体命令 --help" }
+  ],
+  "镜像命令": [
+    { "title": "列出本地主机上的镜像", "content": "docker images" },
+    {
+      "title": "列出本地所有的镜像（含历史映像层）",
+      "content": "docker images -a"
+    },
+    { "title": "只显示镜像ID", "content": "docker images -q" },
+    { "title": "搜索镜像", "content": "docker search mysql" },
+    {
+      "title": "搜索镜像,只显示前5个",
+      "content": "docker search --limit 5 redis"
+    },
+    { "title": "查看镜像", "content": "docker system df" },
+    { "title": "删除单个镜像", "content": "docker rmi  -f 镜像ID" },
+    {
+      "title": "删除多个",
+      "content": "docker rmi -f 镜像名1:TAG 镜像名2:TAG "
+    },
+    { "title": "删除全部", "content": "docker rmi -f $(docker images -qa)" },
+    { "title": "清理掉虚悬镜像", "content": "docker image prune" }
+  ],
+  "容器命令": [
+    {
+      "title": "新建+启动命令",
+      "content": "docker run [OPTIONS] IMAGE [COMMAND] [ARG...]"
+    },
+    {
+      "title": "使用镜像centos:latest以交互模式启动一个容器,在容器内执行/bin/bash命令",
+      "content": "docker run -it centos /bin/bash "
+    },
+    { "title": "列出当前所有正在运行的容器", "content": "docker ps -alnq" },
+    { "title": "退出容器", "content": "exec" },
+    {
+      "title": "启动已停止运行的容器",
+      "content": "docker start 容器ID或者容器名"
+    },
+    { "title": "重启容器", "content": "docker restart 容器ID或者容器名" },
+    { "title": "停止容器", "content": "docker stop 容器ID或者容器名" },
+    { "title": "强制停止容器", "content": "docker kill 容器ID或容器名" },
+    { "title": "删除已停止的容器", "content": "docker rm 容器ID" },
+    {
+      "title": "强制删除所有的 Docker 容器",
+      "content": "docker rm -f $(docker ps -a -q)"
+    },
+    {
+      "title": "强制删除所有的 Docker 容器",
+      "content": "docker ps -a -q | xargs docker rm"
+    }
+  ],
+  "实操": [
+    { "title": "后台运行模式启动容器", "content": "docker run -d 容器名" },
+    { "title": "前台交互式启动", "content": " docker run -it redis" },
+    { "title": "查看容器日志", "content": "docker logs 容器ID" },
+    { "title": "查看容器内运行的进程", "content": "docker top 容器ID" },
+    { "title": "查看容器内部细节", "content": "docker inspect 容器ID" },
+    { "title": "进入容器内部", "content": "docker exec -it 容器ID /bin/bash" },
+    {
+      "title": "进入容器(退出会终止容器进程)",
+      "content": "docker attach 容器ID"
+    },
+    {
+      "title": "从容器内拷贝文件到主机上",
+      "content": "docker cp  容器ID:容器内路径 目的主机路径"
+    }
+  ],
+  "导入和导出容器": [
+    { "title": "导出容器", "content": "docker export 容器ID > 文件名.tar" },
+    {
+      "title": "导入容器",
+      "content": "cat 文件名.tar | docker import - 镜像用户/镜像名:镜像版本号"
+    }
+  ],
+  "打包镜像": [
+    { "title": "构建镜像", "content": "docker build -t Name:TagName ." },
+    {
+      "title": "创建并启动容器",
+      "content": "docker run -d -p 8080:8080 6e7772b68332"
+    }
+  ],
+  "数据卷操作": [
+    {
+      "title": "挂载",
+      "content": "docker run -itd --name nginx -v /Users/sang/blog/docker/:/usr/share/nginx/html/ -p 80:80 bc26f1ed35cf"
+    },
+    { "title": "查看所有的数据卷", "content": "docker volume ls" },
+    { "title": "查看数据卷详情", "content": "docker volume inspect" },
+    { "title": "删除数据卷", "content": "docker volume rm" }
+  ]
+}

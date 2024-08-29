@@ -1,0 +1,180 @@
+body {
+  margin: 0; /* 移除默认的 body 外边距 */
+  overflow-y: hidden; /* 防止水平滚动条 */
+  font-family: Arial, sans-serif; /* 设置默认字体 */
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  margin-top: 2px;
+  /* background-image: url("./img/bj.gif"); 替换为你想要的图片的路径 */
+  /* background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%); */
+  background-size: cover; /* 使背景图片覆盖整个页面 */
+  background-repeat: no-repeat; /* 禁止背景图片重复 */
+}
+
+.artistic-title {
+  margin: 10px;
+  font-size: 4em;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 4px #aaa;
+}
+
+.search-container {
+  width: 50%;
+  margin: 0 150px;
+}
+
+#globalSearch {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #444;
+  border-radius: 4px;
+  display: block;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 100px); /* Adjust height based on header height */
+}
+
+.sidebar {
+  width: 10%;
+  /* background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%); */
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+  border-right: 1px solid #ddd;
+  overflow-y: auto; /* 侧边栏内容过多时增加滚动条 */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 30px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  border: 1px solid rgb(255, 254, 254); /* 设置边框为黑色，1像素宽 */
+  margin-top: 5px;
+  /* background-image: linear-gradient(60deg, #64b3f4 0%, #c2e59c 100%); */
+}
+
+.sidebar ul li:hover {
+  background-color: #3d566e;
+}
+
+.content {
+  flex: 1;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.right-sidebar {
+  width: 10%;
+  background-color: #f5f5f5;
+  border-left: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.right-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.right-sidebar ul li {
+  padding: 12px; /* 增加行间距 */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, color 0.3s;
+  margin-bottom: 8px; /* 增加间距 */
+  border-radius: 4px;
+  border: 1px solid transparent; /* 初始透明边框用于过渡效果 */
+  background-color: #e0e0e0; /* 初始背景颜色 */
+}
+
+.right-sidebar ul li:hover {
+  background-color: #3498db;
+  color: white;
+  transform: scale(1.05); /* 增加点击动作效果 */
+  border: 1px solid #2980b9; /* 边框颜色过渡 */
+  cursor: pointer;
+}
+
+.right-sidebar ul li.active {
+  background-image: linear-gradient(-225deg, #cbbacc 0%, #2580b3 100%);
+  color: white;
+  border: 1px solid #1f6391; /* 突出显示的边框颜色 */
+}
+.hidden {
+  display: none;
+}
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #e7e7e7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.note:hover {
+  background-image: linear-gradient(
+    to right,
+    #eea2a2 0%,
+    #bbc1bf 19%,
+    #57c6e1 42%,
+    #b49fda 79%,
+    #7ac5d8 100%
+  );
+  box-shadow: 0 4px 8px rgba(89, 172, 11, 0.15);
+}
+
+.note h3 {
+  margin: 0;
+  margin-right: 20px;
+  white-space: nowrap;
+  color: #34495e;
+}
+
+.note p {
+  margin: 0;
+  flex: 1;
+  color: #000000;
+}
+
+.copy-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.copy-button:hover {
+  background-color: #2980b9;
+}
+
+.copy-button.copied {
+  background-color: #2ecc71;
+  color: #fff;
+}

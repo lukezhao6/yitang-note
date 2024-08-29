@@ -1,0 +1,10 @@
+{
+  "连接": [{ "title": "登录", "content": "mysql -u root -p" }],
+  "元数据查询": [
+    { "title": "展示服务器版本信息", "content": "SELECT VERSION()" },
+    { "title": "查询当前数据库名", "content": "SELECT DATABASE()" },
+    { "title": "查看当前用户名", "content": "SELECT USER()" },
+    { "title": "查看服务器状态", "content": "SHOW STATUS" },
+    { "title": "查看服务器配置变量", "content": "SHOW VARIABLES" }
+  ]
+}

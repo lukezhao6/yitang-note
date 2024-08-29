@@ -1,0 +1,33 @@
+{
+  "入学礼包": [
+    {
+      "title": "一堂时间胶囊",
+      "content": "https://yitang.top/lesson/v4Tj63eb81d51bb3?tab=content"
+    },
+    {
+      "title": "入学礼包：创业者技能树",
+      "content": "https://yitang.top/lesson/VhN05d3038a8c5ba?tab=content"
+    },
+    {
+      "title": "git配置代理",
+      "content": "git config --global https.proxy https://127.0.0.1:7890"
+    },
+    {
+      "title": "配置用户的name",
+      "content": "git config --global user.name \"用户名\""
+    },
+    {
+      "title": "配置用户的email",
+      "content": "git config -- global user.email \"XXXXXXXX.@qq.com\""
+    }
+  ],
+  "决策": [
+    { "title": "全员必修：科学决策审美篇", "content": "https://yitang.top/lesson/RlY0641830d438b3?tab=content" },
+    { "title": "克隆现有的git存储库", "content": "git clone [url]" },
+    {
+      "title": "ROI实操1：提升宽度篇",
+      "content": "https://yitang.top/lesson/bRf_642e65080607?tab=content"
+    }
+
+  ]
+}

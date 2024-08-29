@@ -1,0 +1,235 @@
+{
+  "cat:连接文件并将其内容显示在标准输出（通常是终端）上": [
+    { "title": "查看文件内容", "content": "cat filename.txt" },
+    {
+      "title": "合并多个文件",
+      "content": "cat file1.txt file2.txt > combined.txt"
+    },
+    { "title": "创建新文件并向其中写入内容", "content": "cat > newfile.txt" },
+    { "title": "追加内容到现有文件", "content": "cat >> existingfile.txt" },
+    { "title": "显示行号", "content": "cat -n filename.txt" }
+  ],
+  "more:逐页查看文件内容": [
+    { "title": "查看文件内容", "content": "more filename.txt" }
+  ],
+  "less:以交互式方式查看文本文件内容": [
+    { "title": "查看文件内容", "content": "less filename.txt" }
+  ],
+  "head:显示文件的开头部分": [
+    { "title": "显示文件开头部分", "content": "head filename.txt" },
+    { "title": "指定显示的行数", "content": "head -n 5 filename.txt" },
+    {
+      "title": "显示多个文件的开头部分",
+      "content": "head file1.txt file2.txt"
+    }
+  ],
+  "tail:显示文件的末尾部分": [
+    { "title": "显示文件末尾部分", "content": "tail filename.txt" },
+    { "title": "指定显示的行数", "content": "tail -n 5 filename.txt" },
+    { "title": "实时监视文件", "content": "tail -f filename.txt" },
+    {
+      "title": "显示多个文件的末尾部分",
+      "content": "tail file1.txt file2.txt"
+    }
+  ],
+  "touch:创建空白文件或者更改文件的访问和修改时间戳": [
+    { "title": "创建空白文件", "content": "touch filename.txt" },
+    {
+      "title": "已存在的文件更改文件的访问和修改时间戳",
+      "content": "touch existingfile.txt"
+    },
+    {
+      "title": "同时创建多个文件",
+      "content": "touch file1.txt file2.txt file3.txt"
+    },
+    {
+      "title": "指定时间戳",
+      "content": "touch -t 202205210930.45 filename.txt"
+    },
+    {
+      "title": "创建具有指定时间戳的文件",
+      "content": "touch -d \"2022-05-21 09:30:45\" filename.txt"
+    }
+  ],
+  "grep:强大的文本搜索工具": [
+    { "title": "在文件中搜索", "content": "grep pattern filename.txt" },
+    {
+      "title": "在多个文件中搜索",
+      "content": "grep pattern file1.txt file2.txt"
+    },
+    { "title": "递归搜索目录", "content": "grep -r pattern directory/" },
+    {
+      "title": "搜索时忽略大小写",
+      "content": "grep -i pattern filename.txt"
+    },
+    { "title": "输出行号", "content": "grep -n pattern filename.txt" }
+  ],
+  "sort:对文本文件的内容进行排序": [
+    { "title": "基本排序", "content": "sort filename.txt" },
+    { "title": "反向排序", "content": "sort -r filename.txt" },
+    { "title": "忽略大小写", "content": "sort -f filename.txt" },
+    { "title": "指定字段排序", "content": "sort -k 2,2 filename.txt" },
+    { "title": "去重并排序", "content": "sort -u filename.txt" }
+  ],
+  "uniq:过滤或报告文件中的重复行": [
+    { "title": "过滤重复行", "content": "uniq filename.txt" },
+    { "title": "计算重复行的数量", "content": "uniq -c filename.txt" },
+    { "title": "仅显示重复行", "content": "uniq -d filename.txt" },
+    { "title": "仅显示不重复的行", "content": "uniq -u filename.txt" }
+  ],
+  "comm:比较两个已排序的文件并显示它们的交集、差集和并集": [
+    { "title": "用法", "content": "comm file1.txt file2.txt" }
+  ],
+  "diff:比较两个文件或目录的内容，并显示它们之间的差异": [
+    { "title": "比较两个文件", "content": "diff file1.txt file2.txt" },
+    {
+      "title": "递归比较两个目录",
+      "content": "diff -r directory1/ directory2/"
+    },
+    {
+      "title": "将比较结果输出到文件",
+      "content": "diff file1.txt file2.txt > diff_result.txt"
+    },
+    { "title": "只显示不同的行", "content": "diff -q file1.txt file2.txt" }
+  ],
+  "cp:复制文件或目录": [
+    { "title": "复制文件", "content": "cp sourcefile.txt destination/" },
+    {
+      "title": "复制多个文件到目录",
+      "content": "cp file1.txt file2.txt file3.txt destination/"
+    },
+    { "title": "递归复制目录", "content": "cp -r sourcedir/ destination/" },
+    {
+      "title": "覆盖已存在的目标文件",
+      "content": "cp -f sourcefile.txt destination/"
+    }
+  ],
+  "rm:删除文件或目录": [
+    { "title": "删除文件", "content": "rm filename.txt" },
+    {
+      "title": "删除多个文件",
+      "content": "rm file1.txt file2.txt file3.txt"
+    },
+    { "title": "递归删除目录", "content": "rm -r directory/" },
+    { "title": "交互式删除", "content": "rm -i filename.txt" },
+    { "title": "强制删除", "content": "rm -f filename.txt" }
+  ],
+  "mv:移动文件或目录": [
+    { "title": "移动文件或目录", "content": "mv source.txt destination/" },
+    {
+      "title": "移动并重命名文件或目录",
+      "content": "mv source.txt destination/newname.txt"
+    },
+    { "title": "重命名文件或目录", "content": "mv oldname.txt newname.txt" },
+    {
+      "title": "移动目录及其内容",
+      "content": "mv -r sourcedir/ destination/"
+    }
+  ],
+  "wc:统计文件的行数、字数和字节数": [
+    { "title": "统计文件行数", "content": "wc -l filename.txt" },
+    { "title": "统计文件字数", "content": "wc -w filename.txt" },
+    { "title": "统计文件字节数", "content": "wc -c filename.txt" },
+    { "title": "同时统计行数、字数和字节数", "content": "wc filename.txt" },
+    { "title": "统计多个文件", "content": "wc file1.txt file2.txt" }
+  ],
+  "mkdir:创建新目录": [
+    { "title": "创建单个目录", "content": "mkdir directory_name" },
+    { "title": "创建多个目录", "content": "mkdir dir1 dir2 dir3" },
+    { "title": "递归创建目录", "content": "mkdir -p path/to/directory" },
+    {
+      "title": "创建具有特定权限的目录",
+      "content": "mkdir -m 755 directory_name"
+    }
+  ],
+  "rmdir:删除空目录": [
+    { "title": "删除单个空目录", "content": "rmdir directory_name" },
+    { "title": "删除多个空目录", "content": "rmdir dir1 dir2 dir3" },
+    { "title": "递归删除目录", "content": "rm -r directory_name" }
+  ],
+  "ln:创建链接": [
+    { "title": "创建硬链接", "content": "ln source_file hard_link" },
+    {
+      "title": "创建符号链接（软链接）",
+      "content": "ln -s source_file symbolic_link"
+    },
+    {
+      "title": "创建硬链接到目录",
+      "content": "ln -d source_directory hard_link_to_directory"
+    },
+    { "title": "查看链接信息", "content": "ls -l filename" },
+    { "title": "查看符号链接的目标", "content": "ls -l symbolic_link" }
+  ],
+  "chmod:修改文件或目录的权限": [
+    { "title": "修改文件权限", "content": "chmod 755 file.txt" },
+    { "title": "修改目录权限", "content": "chmod -R 755 folder/" }
+  ],
+  "umask:设置文件创建时的默认权限掩码": [
+    { "title": "查看当前默认权限掩码", "content": "umask" },
+    { "title": "设置默认权限掩码", "content": "umask 0022" }
+  ],
+  "chgrp:修改文件或目录的所属组": [
+    { "title": "chgrp用法", "content": "chgrp new_group file_or_directory" },
+    {
+      "title": "递归修改目录及其内容的所属组",
+      "content": "chgrp -R new_group directory/"
+    }
+  ],
+  "chown:修改文件或目录的所有者和所属组": [
+    {
+      "title": "修改文件或目录的所有者",
+      "content": "chown new_owner file_or_directory"
+    },
+    {
+      "title": "同时修改文件或目录的所有者和所属组",
+      "content": "chown new_owner:new_group file_or_directory"
+    },
+    {
+      "title": "递归修改目录及其所有内容的所有者和所属组",
+      "content": "chown -R new_owner:new_group directory"
+    }
+  ],
+  "ps:显示当前运行进程的状态信息": [
+    { "title": "显示当前用户的进程", "content": "ps" },
+    { "title": "显示所有进程", "content": "ps -e" },
+    { "title": "显示详细信息", "content": "ps -f" },
+    { "title": "按特定用户显示进程", "content": "ps -u username" },
+    { "title": "查找特定进程", "content": "ps -ef | grep process_name" }
+  ],
+  "kill:终止正在运行的进程": [
+    { "title": "终止指定进程", "content": "kill PID" },
+    { "title": "强制终止进程", "content": "kill -9 PID" },
+    { "title": "终止一组相关进程", "content": "kill -TERM -PGID" },
+    { "title": "按名称终止进程", "content": "kill $(pgrep process_name)" }
+  ],
+  "gzip:压缩文件": [
+    { "title": "压缩文件", "content": "gzip filename" },
+    { "title": "压缩多个文件", "content": "gzip file1 file2 file3" },
+    { "title": "保留原始文件", "content": "gzip -k filename" },
+    { "title": "递归压缩目录", "content": "gzip -r directory" }
+  ],
+  "unzip:解压缩压缩文件": [
+    { "title": "解压文件", "content": "unzip filename.zip" },
+    {
+      "title": "指定目标目录",
+      "content": "unzip filename.zip -d target_directory"
+    }
+  ],
+  "tar:创建和解压缩归档文件": [
+    {
+      "title": "创建归档文件",
+      "content": "tar -cvf archive.tar file1 file2 file3"
+    },
+    { "title": "解压归档文件", "content": "tar -xvf archive.tar" },
+    {
+      "title": "解压到指定目录",
+      "content": "tar -xvf archive.tar -C target_directory"
+    },
+    { "title": "查看归档文件内容", "content": "tar -tvf archive.tar" },
+    {
+      "title": "创建归档文件并压缩",
+      "content": "tar -czvf archive.tar.gz file1 file2 file3"
+    },
+    { "title": "解压缩归档文件", "content": "tar -xzvf archive.tar.gz" }
+  ]
+}
