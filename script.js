@@ -115,7 +115,7 @@ async function globalSearch() {
   } else {
     rightSidebar.classList.remove("hidden");
     // 默认显示git笔记
-    showCategory("git");
+    showCategory("class-url");
   }
 
   notesContent.innerHTML = "";
@@ -153,7 +153,7 @@ async function globalSearch() {
 
 // 默认显示git笔记
 document.addEventListener("DOMContentLoaded", () => {
-  showCategory("git");
+  showCategory("class-url");
 });
 document.addEventListener("DOMContentLoaded", (event) => {
   fetchAllNotes();
