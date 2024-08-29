@@ -140,16 +140,22 @@ async function globalSearch() {
           const noteDiv = document.createElement("div");
           noteDiv.className = "note";
           noteDiv.innerHTML = `
-            <h3>${note.title}</h3>
-            <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
-            <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
-          `;
+            // <h3>${note.title}</h3>
+            // <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
+            // <button class="copy-button" id="copy-button-${category}-${subcategory}-${index}" onclick="copyContent('note-content-${category}-${subcategory}-${index}', 'copy-button-${category}-${subcategory}-${index}')">复制</button>
+          <h3>${note.title}</h3>
+          <p id="note-content-${category}-${subcategory}-${index}">${note.content}</p>
+          <button class="copy-button" id="action-button-${category}-${subcategory}-${index}" onclick="handleButtonClick('note-content-${category}-${subcategory}-${index}', 'action-button-${category}-${subcategory}-${index}')">${isUrl(note.content) ? '去上课' : '复制'}
+          </button>
+            `;
           notesContent.appendChild(noteDiv);
         }
       });
     }
   }
 }
+
+
 
 // 默认显示git笔记
 document.addEventListener("DOMContentLoaded", () => {
@@ -158,3 +164,34 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", (event) => {
   fetchAllNotes();
 });
+
+function isUrl(string) {
+  try {
+      new URL(string);
+      return true;
+  } catch (_) {
+      return false;
+  }
+}
+
+function handleButtonClick(contentId, buttonId) {
+  const content = document.getElementById(contentId).innerText;
+  if (isUrl(content)) {
+      window.open(content, '_blank');
+  } else {
+      copyContent(contentId, buttonId);
+  }
+}
+
+function copyContent(contentId, buttonId) {
+  const content = document.getElementById(contentId).innerText;
+  navigator.clipboard.writeText(content).then(function() {
+      const button = document.getElementById(buttonId);
+      button.innerText = '已复制';
+      setTimeout(() => {
+          button.innerText = '复制';
+      }, 2000);
+  }, function(err) {
+      console.error('复制失败', err);
+  });
+}
