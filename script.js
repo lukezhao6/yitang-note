@@ -105,6 +105,37 @@ function copyContent(contentId, buttonId) {
   });
 }
 
+function isUrl(string) {
+  try {
+      new URL(string);
+      return true;
+  } catch (_) {
+      return false;
+  }
+}
+
+function handleButtonClick(contentId, buttonId) {
+  const content = document.getElementById(contentId).innerText;
+  if (isUrl(content)) {
+      window.open(content, '_blank');
+  } else {
+      copyContent(contentId, buttonId);
+  }
+}
+
+function copyContent(contentId, buttonId) {
+  const content = document.getElementById(contentId).innerText;
+  navigator.clipboard.writeText(content).then(function() {
+      const button = document.getElementById(buttonId);
+      button.innerText = '已复制';
+      setTimeout(() => {
+          button.innerText = '复制';
+      }, 2000);
+  }, function(err) {
+      console.error('复制失败', err);
+  });
+}
+
 async function globalSearch() {
   const query = document.getElementById("globalSearch").value.toLowerCase();
   const notesContent = document.getElementById("notesContent");
@@ -162,33 +193,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
   fetchAllNotes();
 });
 
-function isUrl(string) {
-  try {
-      new URL(string);
-      return true;
-  } catch (_) {
-      return false;
-  }
-}
-
-function handleButtonClick(contentId, buttonId) {
-  const content = document.getElementById(contentId).innerText;
-  if (isUrl(content)) {
-      window.open(content, '_blank');
-  } else {
-      copyContent(contentId, buttonId);
-  }
-}
-
-function copyContent(contentId, buttonId) {
-  const content = document.getElementById(contentId).innerText;
-  navigator.clipboard.writeText(content).then(function() {
-      const button = document.getElementById(buttonId);
-      button.innerText = '已复制';
-      setTimeout(() => {
-          button.innerText = '复制';
-      }, 2000);
-  }, function(err) {
-      console.error('复制失败', err);
-  });
-}
