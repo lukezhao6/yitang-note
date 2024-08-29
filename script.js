@@ -7,7 +7,7 @@ async function fetchOneNotes(category) {
 }
 
 async function fetchAllNotes() {
-  const categories = ["git", "jvm", "mysql", "mysql-plus", "linux", "docker"];
+  const categories = ["class-url"];
   const notes = {};
 
   for (const category of categories) {
